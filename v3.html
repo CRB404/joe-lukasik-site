@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Joseph Lukasik</title>
+<meta name="description" content="Joseph Lukasik — award-winning composer, multi-instrumentalist, and media artist based in Boulder, Colorado." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+<style>
+:root{
+  --paper:#f0eee9; --paper2:#e8e5dd; --ink:#1c1917; --soft:#57534e; --mute:#a8a29e;
+  --line:#d9d5cb; --line2:#c9c4b8; --accent:#a1543c;
+  --serif:"Instrument Serif",Georgia,serif; --sans:"Inter",system-ui,sans-serif;
+  --max:1160px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-weight:400;
+  line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden;letter-spacing:.005em}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 clamp(24px,6vw,72px)}
+.serif{font-family:var(--serif)}
+.ey{font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:var(--mute);font-weight:500}
+
+/* nav */
+.snav{position:fixed;top:0;left:0;right:0;z-index:60;padding:26px clamp(24px,6vw,72px);
+  display:flex;justify-content:space-between;align-items:center;
+  background:linear-gradient(var(--paper),rgba(240,238,233,.0));backdrop-filter:blur(2px)}
+.snav .mark{font-family:var(--serif);font-size:23px;letter-spacing:.01em}
+.snav .links{display:flex;gap:30px;font-size:12.5px;letter-spacing:.04em;color:var(--soft)}
+.snav .links a{position:relative;transition:color .2s}
+.snav .links a::after{content:"";position:absolute;left:0;bottom:-4px;width:0;height:1px;background:var(--accent);transition:width .3s}
+.snav .links a:hover{color:var(--ink)}
+.snav .links a:hover::after{width:100%}
+@media(max-width:700px){.snav .links{display:none}}
+
+/* hero */
+.hero{min-height:100svh;display:flex;flex-direction:column;justify-content:center;
+  padding:150px 0 80px;text-align:center}
+.hero .ey{margin-bottom:30px}
+.hero h1{font-family:var(--serif);font-weight:400;font-size:clamp(64px,15vw,220px);line-height:.9;
+  letter-spacing:-.01em;margin:0}
+.hero h1 .it{font-style:italic}
+.hero .sub{font-family:var(--serif);font-style:italic;font-size:clamp(20px,2.8vw,34px);color:var(--soft);
+  margin:26px 0 0;font-weight:400}
+.hero .meta{display:flex;gap:14px 30px;justify-content:center;flex-wrap:wrap;margin-top:44px;
+  font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
+.hero .meta .d{color:var(--accent)}
+.hero .cue{margin-top:70px;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--mute)}
+.hero .cue span{display:block;width:1px;height:40px;background:linear-gradient(var(--line2),transparent);margin:14px auto 0}
+
+/* thin rule marquee */
+.strip{border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;
+  white-space:nowrap;padding:20px 0;
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);
+  mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent)}
+.strip .track{display:inline-flex;gap:0;animation:sx 46s linear infinite;will-change:transform}
+.strip:hover .track{animation-play-state:paused}
+.strip i{font-family:var(--serif);font-style:normal;font-size:clamp(20px,2.6vw,30px);color:var(--soft);
+  display:inline-flex;align-items:center;padding:0 34px}
+.strip i::after{content:"·";color:var(--accent);margin-left:34px}
+@keyframes sx{to{transform:translateX(-50%)}}
+
+/* section */
+section{padding:clamp(90px,13vh,170px) 0}
+.shead{text-align:center;margin-bottom:clamp(50px,7vw,86px)}
+.shead .no{font-size:12px;letter-spacing:.22em;color:var(--accent);text-transform:uppercase}
+.shead h2{font-family:var(--serif);font-weight:400;font-size:clamp(34px,6vw,72px);letter-spacing:-.01em;
+  margin:16px 0 0;line-height:1}
+.shead p{color:var(--soft);max-width:46ch;margin:16px auto 0;font-size:15.5px}
+
+/* about */
+.about{display:grid;grid-template-columns:1fr 1fr;gap:clamp(36px,7vw,100px);align-items:start}
+@media(max-width:820px){.about{grid-template-columns:1fr;text-align:left}}
+.about .lead{font-family:var(--serif);font-size:clamp(28px,4vw,46px);line-height:1.22;letter-spacing:-.01em;
+  margin:0;font-weight:400;text-wrap:balance}
+.about .lead .it{font-style:italic;color:var(--accent)}
+.about p{color:var(--soft);margin:0 0 20px;font-size:16px;max-width:56ch}
+.about .side{margin-top:8px}
+.about .side h3{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--mute);
+  margin:0 0 16px;padding-bottom:12px;border-bottom:1px solid var(--line)}
+.about .side .grp{margin-bottom:36px}
+.about .side .li{padding:12px 0;border-bottom:1px solid var(--line);color:var(--soft);font-size:15px}
+
+/* works */
+.works{max-width:920px;margin:0 auto;border-top:1px solid var(--line)}
+.wrow{display:grid;grid-template-columns:auto 1fr auto;gap:28px;align-items:baseline;
+  padding:26px 8px;border-bottom:1px solid var(--line);transition:background .35s,padding .35s}
+.wrow:hover{background:rgba(161,84,60,.04);padding-left:20px;padding-right:20px}
+.wrow .idx{font-size:12px;color:var(--mute);font-variant-numeric:tabular-nums}
+.wrow .ti{font-family:var(--serif);font-size:clamp(23px,3vw,34px);letter-spacing:-.005em;line-height:1.1}
+.wrow .de{font-size:13.5px;color:var(--mute);margin-top:3px}
+.wrow .tg{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--soft);white-space:nowrap}
+@media(max-width:560px){.wrow{grid-template-columns:auto 1fr}.wrow .tg{display:none}}
+
+/* services */
+.serv{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(28px,4vw,60px);max-width:960px;margin:0 auto}
+@media(max-width:680px){.serv{grid-template-columns:1fr}}
+.serv .cell{padding-top:26px;border-top:1px solid var(--line2)}
+.serv .cell .n{font-size:12px;color:var(--accent);letter-spacing:.1em}
+.serv .cell h3{font-family:var(--serif);font-weight:400;font-size:clamp(26px,3.2vw,38px);margin:14px 0 12px;letter-spacing:-.005em}
+.serv .cell p{color:var(--soft);margin:0;font-size:15px;max-width:40ch}
+
+/* listen */
+.listen .frame{max-width:900px;margin:0 auto;background:var(--paper2);border:1px solid var(--line2);
+  border-radius:4px;padding:clamp(20px,3vw,34px)}
+.listen .lh{text-align:center;margin-bottom:24px}
+.listen .lh .t{font-family:var(--serif);font-size:clamp(24px,3vw,38px);margin:0 0 6px}
+.listen .lh a{font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);
+  border-bottom:1px solid rgba(161,84,60,.35);padding-bottom:3px}
+.listen iframe{border-radius:3px;display:block}
+
+/* contact */
+.contact{text-align:center}
+.contact .k{font-family:var(--serif);font-style:italic;color:var(--soft);font-size:clamp(20px,2.6vw,28px);margin:0 0 18px}
+.contact .big{font-family:var(--serif);font-size:clamp(34px,7vw,86px);letter-spacing:-.01em;margin:0;line-height:1}
+.contact .big a{background:linear-gradient(var(--accent),var(--accent)) no-repeat center bottom/0 1px;transition:background-size .4s;padding-bottom:6px}
+.contact .big a:hover{background-size:100% 1px}
+.contact .inv{color:var(--soft);max-width:44ch;margin:34px auto 0;font-size:16px}
+.contact .row{display:flex;gap:14px 40px;justify-content:center;flex-wrap:wrap;margin-top:40px;
+  padding-top:30px;border-top:1px solid var(--line);font-size:13px;letter-spacing:.06em;color:var(--soft)}
+.contact .row a:hover{color:var(--accent)}
+.contact .row .l{color:var(--mute);text-transform:uppercase;font-size:11px;letter-spacing:.16em;margin-right:9px}
+
+footer{padding:36px 0;border-top:1px solid var(--line);text-align:center;color:var(--mute);font-size:12px;letter-spacing:.02em}
+
+.rv{opacity:0;transform:translateY(22px);transition:opacity 1s cubic-bezier(.2,.7,.2,1),transform 1s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none}.strip .track{animation:none}}
+</style>
+</head>
+<body>
+<header class="snav">
+  <a class="mark" href="#top">Joseph Lukasik</a>
+  <nav class="links">
+    <a href="#about">About</a><a href="#work">Work</a><a href="#listen">Listen</a><a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<main id="top">
+  <section class="hero wrap">
+    <div class="ey">Compulsive Music™ — Est. Boulder, Colorado</div>
+    <h1>Joseph <span class="it">Lukasik</span></h1>
+    <p class="sub" data-sub></p>
+    <div class="meta" id="meta"></div>
+    <div class="cue">Scroll<span></span></div>
+  </section>
+
+  <div class="strip"><div class="track" id="strip"></div></div>
+
+  <section id="about" class="wrap">
+    <div class="shead rv"><span class="no">I — Portrait</span><h2>The Artist</h2></div>
+    <div class="about">
+      <div>
+        <p class="lead rv" id="lead"></p>
+      </div>
+      <div class="rv">
+        <div id="bio"></div>
+        <div class="side">
+          <div class="grp"><h3>Training</h3><div id="edu"></div></div>
+          <div class="grp"><h3>Disciplines</h3><div id="disc"></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="work" class="wrap">
+    <div class="shead rv"><span class="no">II — Selected</span><h2>Highlights & Honors</h2>
+      <p>A brief record of stages, prizes, and international performances.</p></div>
+    <div class="works" id="works"></div>
+  </section>
+
+  <section id="services" class="wrap">
+    <div class="shead rv"><span class="no">III — Practice</span><h2>Commissions & Performance</h2></div>
+    <div class="serv" id="serv"></div>
+  </section>
+
+  <section id="listen" class="wrap listen">
+    <div class="shead rv"><span class="no">IV — Sound</span><h2>Listen</h2></div>
+    <div class="frame rv">
+      <div class="lh"><p class="t">Concert & experimental electronic works</p>
+        <a href="https://soundcloud.com/musicaldavvener" target="_blank" rel="noopener">soundcloud.com/musicaldavvener ↗</a></div>
+      <iframe width="100%" height="320" scrolling="no" frameborder="no" allow="autoplay" loading="lazy"
+        title="Joseph Lukasik on SoundCloud"
+        src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/musicaldavvener&color=%23a1543c&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false&visual=true"></iframe>
+    </div>
+  </section>
+
+  <section id="contact" class="wrap contact">
+    <div class="rv">
+      <p class="k">Concert performances · Event music · Commissions · Art</p>
+      <p class="big"><a data-email-link></a></p>
+      <p class="inv" data-invite></p>
+      <div class="row">
+        <span><span class="l">Studio</span>Boulder, Colorado</span>
+        <span><span class="l">Listen</span><a href="https://soundcloud.com/musicaldavvener" target="_blank" rel="noopener">SoundCloud</a></span>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer><span data-copy></span></footer>
+
+<script src="assets/content.js"></script>
+<script>
+(function(){
+  var J=window.JOE;
+  document.querySelector('[data-sub]').textContent="Composer · Multi-Instrumentalist · Media Artist";
+  document.getElementById('meta').innerHTML=
+    '<span>Award-winning composer</span><span class="d">/</span><span>Boulder, Colorado</span><span class="d">/</span><span>Barlow International Prize</span>';
+  // strip
+  var items=J.ticker.concat(J.ticker);
+  document.getElementById('strip').innerHTML=items.map(function(t){return '<i>'+t+'</i>';}).join('');
+  // about
+  document.getElementById('lead').innerHTML='A multi-instrumentalist and <span class="it">award-winning composer</span> — working across concert music, experimental electronics, and media art.';
+  document.getElementById('bio').innerHTML=J.bio.paragraphs.map(function(p){return '<p>'+p+'</p>';}).join('');
+  document.getElementById('edu').innerHTML=J.education.map(function(e){return '<div class="li">'+e+'</div>';}).join('');
+  document.getElementById('disc').innerHTML=J.facets.map(function(f){return '<div class="li">'+f.k+'</div>';}).join('');
+  // works
+  document.getElementById('works').innerHTML=J.highlights.map(function(h,i){
+    var n=('0'+(i+1)).slice(-2);
+    return '<div class="wrow"><span class="idx">'+n+'</span>'+
+      '<div><div class="ti">'+h.title+'</div><div class="de">'+h.detail+'</div></div>'+
+      '<span class="tg">'+h.tag+'</span></div>';
+  }).join('');
+  // services
+  document.getElementById('serv').innerHTML=J.services.map(function(s,i){
+    return '<div class="cell"><span class="n">0'+(i+1)+' —</span><h3>'+s.title+'</h3><p>'+s.blurb+'</p></div>';
+  }).join('');
+  // contact
+  var em=J.contact.email,a=document.querySelector('[data-email-link]');a.textContent=em;a.href='mailto:'+em;
+  document.querySelector('[data-invite]').textContent=J.contact.invite;
+  document.querySelector('[data-copy]').textContent=J.copyright;
+
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});
+  document.querySelectorAll('.rv').forEach(function(n){io.observe(n);});
+  document.querySelectorAll('.wrow,.serv .cell').forEach(function(n,i){n.classList.add('rv');n.style.transitionDelay=(i%8*45)+'ms';io.observe(n);});
+})();
+</script>
+<script src="assets/review-nav.js"></script>
+</body>
+</html>
